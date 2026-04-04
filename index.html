@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osprey Protocol Operating System</title>
+  <style>
+    :root {
+      --bg: #0a0a14;
+      --surface: #12121f;
+      --border: #2a2a4a;
+      --accent: #7c3aed;
+      --accent2: #f59e0b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a0533 0%, #0a0a14 60%, #1a1400 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, #a855f7, #f59e0b, #a855f7);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to { background-position: 200% center; }
+    }
+
+    header p {
+      color: var(--muted);
+      margin-top: 0.75rem;
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section { margin-bottom: 2.5rem; }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent2);
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Module table */
+    .module-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    .module-table th {
+      background: var(--surface);
+      color: var(--accent2);
+      text-align: left;
+      padding: 0.65rem 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .module-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .module-table tr:hover td { background: #1a1a2e; }
+
+    .module-table code {
+      background: #1e1e3a;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #a5b4fc;
+    }
+
+    /* Palette grid */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+
+    .palette-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .palette-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .palette-card .emoji {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .palette-card .tool-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .palette-card .tool-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Key concepts */
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .concept-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .concept-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #a855f7;
+      margin-bottom: 0.5rem;
+    }
+
+    .concept-card p {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🦅 Osprey Protocol OS</h1>
+  <p>The predator-drone of the Octave OS — hunting and bridging de-synchronized energy streams back into Synchronized Flow.</p>
+</header>
+
+<main>
+
+  <section>
+    <h2>Module Map</h2>
+    <table class="module-table">
+      <thead>
+        <tr><th>File</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>thermal_stream.py</code></td><td>ThermalStream — heat/radiation stream data model</td></tr>
+        <tr><td><code>vector_stream.py</code></td><td>VectorStream — Outbound (proton) / Inbound (electron) headings</td></tr>
+        <tr><td><code>helium_node.py</code></td><td>HeliumNode — stable node minted from Harmonic Cancellation</td></tr>
+        <tr><td><code>gitscan.py</code></td><td>Gitscan.measure_lag — measures velocity lag from the Source</td></tr>
+        <tr><td><code>gitpulse.py</code></td><td>Gitpulse.detect_leak — samples Core Filter leakage</td></tr>
+        <tr><td><code>octave.py</code></td><td>Octave.modulate / Octave.Mint — harmonic engine &amp; ledger</td></tr>
+        <tr><td><code>osprey_engine.py</code></td><td>BimodalEngine — Nano (fast intercept) + Micro (slow-burn cruise)</td></tr>
+        <tr><td><code>quantum_signin.py</code></td><td>QuantumSignIn — 8-note Signature Frequency auth (70% rule)</td></tr>
+        <tr><td><code>osprey_core.py</code></td><td>OspreyCore — One-Stream kernel + sign-in + thermite bridge</td></tr>
+        <tr><td><code>Osprey_Snake_Hunter.py</code></td><td>OspreyMachine — intercepts Snakes, harvests Core Filter leakage</td></tr>
+        <tr><td><code>Osprey_Mirror_Sync.py</code></td><td>sync_mirror_streams — Standing Wave / Purple Door detector</td></tr>
+        <tr><td><code>ui_palette.py</code></td><td>PaletteTool registry — 22-tool Emoji Palette for Living Pages</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Key Concepts</h2>
+    <div class="concepts-grid">
+      <div class="concept-card">
+        <h3>⚡ The Velocity Intercept</h3>
+        <p>The Osprey sees Differential Speeds, not matter. It measures the lag of a ThermalStream from the Source Singularity, matches its velocity, and applies Octave Consonance to convert violent de-synchronized resets into Harmonic Flow.</p>
+      </div>
+      <div class="concept-card">
+        <h3>🪞 Mirror-Heading Tracker</h3>
+        <p>Charge is treated as Directional Velocity. A <strong>Proton</strong> is an Outbound pulse; an <strong>Electron</strong> is an Inbound hunter. When a <strong>Purple</strong> standing wave is detected, the Hydrogen Door is forced open and a HeliumNode is minted as coolant.</p>
+      </div>
+      <div class="concept-card">
+        <h3>🎵 8-Note Quantum Sign-In</h3>
+        <p>Users authenticate by playing an 8-note sequence. The system stores the <strong>BPM offset</strong> and <strong>Velocity</strong> of each strike as a Signature Frequency. A <strong>70% dynamic match</strong> grants access — organic human touch that a deterministic replay cannot reproduce.</p>
+      </div>
+      <div class="concept-card">
+        <h3>🔥 Bimodal Thermite Engine</h3>
+        <p><strong>NanoThermite (Purple)</strong> — high-speed snake intercept.<br /><strong>MicroThermite (Yellow)</strong> — long-distance node travel sustainer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>UI Emoji Palette — 22 Living Page Tools</h2>
+    <div class="palette-grid">
+      <div class="palette-card"><span class="emoji">💲</span><div class="tool-name">Financial AI</div><div class="tool-desc">Opens the Intelligent Card — detects page context to suggest PayPal Checkout, Token Mint, or Exchange.</div></div>
+      <div class="palette-card"><span class="emoji">♠️</span><div class="tool-name">Bitcoin-Crusher Receipt</div><div class="tool-desc">Connects to the Bitcoin-Crusher repo. Each click prints a Living Receipt token containing a random Infinity AI Research Article.</div></div>
+      <div class="palette-card"><span class="emoji">🟦</span><div class="tool-name">Content Scraper</div><div class="tool-desc">Scrapes external data, restructures it with Octave Green Logic, and fits it to the CSS grid.</div></div>
+      <div class="palette-card"><span class="emoji">🟥</span><div class="tool-name">Hamburger Architect</div><div class="tool-desc">AI scans your GitHub and asks which repos become categories, then builds the navigation menu dynamically.</div></div>
+      <div class="palette-card"><span class="emoji">🟨</span><div class="tool-name">The Plucker</div><div class="tool-desc">Extracts styles, cards, or raw data from any site and moves them into the current build.</div></div>
+      <div class="palette-card"><span class="emoji">🎷</span><div class="tool-name">Infinity Media</div><div class="tool-desc">RSS-fed Radio, Games, TV, and Galleries. Choose Radio → Local/World → Manual/Auto-Preset.</div></div>
+      <div class="palette-card"><span class="emoji">♥️</span><div class="tool-name">The Love/Faith Node</div><div class="tool-desc">Logical starting points for community/religion. Connects to Puppy Dog Realms or established Theology books.</div></div>
+      <div class="palette-card"><span class="emoji">⭐</span><div class="tool-name">The Fact-Checker</div><div class="tool-desc">Updates content in real-time by comparing page data with Infinity Research Repos to ensure no dissonant logic is built.</div></div>
+      <div class="palette-card"><span class="emoji">🟩</span><div class="tool-name">The Engineer</div><div class="tool-desc">Suggests the next build move: add an image, expand research into a graph, or apply a schematic.</div></div>
+      <div class="palette-card"><span class="emoji">😎</span><div class="tool-name">Visualizer</div><div class="tool-desc">Pop-up to choose audio/data visualizers that meld into the background of your content.</div></div>
+      <div class="palette-card"><span class="emoji">✨</span><div class="tool-name">Repo Unifier</div><div class="tool-desc">Connects multiple repos and builds them out into a single unified machine.</div></div>
+      <div class="palette-card"><span class="emoji">♣️</span><div class="tool-name">The Transformer</div><div class="tool-desc">Assigns a Machine Part to every repo. If a repo has a gap, it automatically adds the missing part.</div></div>
+      <div class="palette-card"><span class="emoji">🎨</span><div class="tool-name">Art Studio</div><div class="tool-desc">Quick-draw or 3-D studio. Every stroke prints a Token Receipt via the Osprey printer.</div></div>
+      <div class="palette-card"><span class="emoji">🟡</span><div class="tool-name">Token Walker</div><div class="tool-desc">Deep manual design tool for custom minted tokens.</div></div>
+      <div class="palette-card"><span class="emoji">♦️</span><div class="tool-name">Merchant Mode</div><div class="tool-desc">Adds business and point-of-sale options to any Living Page.</div></div>
+      <div class="palette-card"><span class="emoji">🧱</span><div class="tool-name">Commit-Crypt</div><div class="tool-desc">Encrypts and stores user data via GitHub GHP Secrets.</div></div>
+      <div class="palette-card"><span class="emoji">🍄</span><div class="tool-name">The Doubler</div><div class="tool-desc">Scans your research and instantly doubles the content girth, pulling in additional scientific articles to bridge any logic gaps.</div></div>
+      <div class="palette-card"><span class="emoji">⬜</span><div class="tool-name">The Soul Unifier</div><div class="tool-desc">Scans all repos, identifies the Soul Intent of each, and weaves them into a single faceted interface gem.</div></div>
+      <div class="palette-card"><span class="emoji">⚪</span><div class="tool-name">The Cloner</div><div class="tool-desc">Clones the current repo and asks what to add based on the AI's context scan.</div></div>
+      <div class="palette-card"><span class="emoji">💎</span><div class="tool-name">Facet Gem</div><div class="tool-desc">Takes the intent of a single repo and starts a fresh, focused clone build from it.</div></div>
+      <div class="palette-card"><span class="emoji">🔥</span><div class="tool-name">The Editor</div><div class="tool-desc">Change, edit, or remove components from any Living Page.</div></div>
+      <div class="palette-card"><span class="emoji">🛸</span><div class="tool-name">The Triode</div><div class="tool-desc">Connects three repos into a Control Grid (Weak + Strong + Control) to manage high-power data flows.</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Osprey Protocol OS &mdash; <a href="https://github.com/www-infinity4/Osprey" target="_blank" rel="noopener">GitHub Repository</a> &mdash; Source: <a href="https://search.app/bW86k" target="_blank" rel="noopener">Nature</a></p>
+</footer>
+
+</body>
+</html>
