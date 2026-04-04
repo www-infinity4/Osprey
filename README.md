@@ -53,3 +53,9 @@ a deterministic replay cannot reproduce.
 ### UI Emoji Palette
 22 builder tools (💲 ♠️ 🟦 🟥 🟨 🎷 ♥️ ⭐ 🟩 😎 ✨ ♣️ 🎨 🟡 ♦️ 🧱 🍄 ⬜ ⚪ 💎 🔥 🛸)
 are registered in `ui_palette.py` and activate modular Living Page actions.
+
+---
+
+## Sources
+
+- Nature: <https://search.app/bW86k>
