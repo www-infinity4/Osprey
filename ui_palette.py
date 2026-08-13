@@ -67,7 +67,7 @@ register(PaletteTool(
     name="Financial AI",
     description=(
         "Opens the Intelligent Card — detects page context to suggest "
-        "PayPal Checkout, Token Mint, or Exchange."
+        "Infinity Ledger, Service Coin Formatting, or Exchange."
     ),
 ))
 
