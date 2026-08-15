@@ -59,3 +59,4 @@ are registered in `ui_palette.py` and activate modular Living Page actions.
 ## Sources
 
 - Nature: <https://search.app/bW86k>
+<script src="https://www-infinity4.github.io/Mint-For-Infinity/infinity-wallet-menu.js" defer></script>
